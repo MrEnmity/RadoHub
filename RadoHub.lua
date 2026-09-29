@@ -71,7 +71,7 @@ local function validateKey(key)
     return true, "OK", expiresAt
 end
 
-local SELF_HASH = "23767ea0"
+local SELF_HASH = "REPLACE_ME"
 
 local STRUCTURE_HASH = "23767ea0"
 
