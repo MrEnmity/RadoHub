@@ -2443,6 +2443,21 @@ local function buildKeyPrompt(reason, onSuccess)
     linkBtn.Parent = bg
     Instance.new("UICorner", linkBtn).CornerRadius = UDim.new(0, 5)
 
+    linkBtn.MouseButton1Click:Connect(function()
+    local invite = "https://discord.gg/Kz5BrntJb"
+    if typeof(setclipboard) == "function" then
+        pcall(setclipboard, invite)
+        linkBtn.Text = "Invite copied to clipboard!"
+        task.wait(2)
+        linkBtn.Text = "Get a key from the developer (Discord)"
+    end
+    -- Optionally try to open the link via the executor's browser API
+    if typeof(gethui) == "function" then
+        -- gethui() returns a hidden GUI that some executors expose for
+        -- opening URLs. Rarely useful for this, but here for completeness.
+    end
+end)
+
     local hint = Instance.new("TextLabel")
     hint.Size = UDim2.new(1, -40, 0, 18)
     hint.Position = UDim2.new(0, 20, 0, 232)
